@@ -12,7 +12,7 @@ References: ref \<type>, ref (ref \<type>), etc.\
 (arrays and refs are really i64 memory addresses)
 
 ## Integer literals
-Binary literal: 0b<binary digits>\
+Binary literal: 0b\<binary digits>\
 Octal literal: 0o\<octal digits>\
 Hex literal: 0x<hex digits>\
 Decimal literal: \<decimal digits>
