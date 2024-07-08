@@ -36,7 +36,7 @@ Either a reference or a fancy initializer list like these:\
 
 ## Get/set array elements
 item = myArray[index];\
-myArray[index] = item;\
+myArray[index] = item;
 
 ## Referencing/dereferencing
 ref \<type> myRef = ?\<variable>;\
@@ -55,49 +55,49 @@ clamp\<value, type>: casts \<value> to \<type>, clamping it to avoid overflow
 
 ## Conditionals
 if (\<cond>) {\
-    \<code>\
+&emsp;\<code>\
 } elif (\<cond>) {\
-    \<code>\
+&emsp;\<code>\
 } else (\<cond>) {\
-    \<code>\
+&emsp;\<code>\
 }\
 \
 check (\<value>) {\
-    case \<match1>:\
-        \<code>\
-    case \<match2>:\
-        \<code>\
-    ...\
-    default:\
-        \<code>\
+&emsp;case \<match1>:\
+&emsp;&emsp;\<code>\
+&emsp;case \<match2>:\
+&emsp;&emsp;\<code>\
+&emsp;...\
+&emsp;default:\
+&emsp;&emsp;\<code>\
 }
 
 ## Loops
 for (\<init>; \<cond>; \<update>) {\
-    \<code>\
+&emsp;\<code>\
 }\
 \
 while (\<cond>) {\
-    \<code>\
+&emsp;\<code>\
 }\
 \
 do {\
-    \<code>\
+&emsp;\<code>\
 } while (\<cond>);\
 \
 skip:\
-    skip to the next iteration\
-    jump to next condition in switch\
+&emsp;skip to the next iteration\
+&emsp;jump to next condition in switch\
 \
 break:\
-    break out of the current loop\
-    break out of switch\
+&emsp;break out of the current loop\
+&emsp;break out of switch
 
 ## Functions
 func myFunction(arg1, arg2, kwarg1=1, kwarg2=2) [-> \<type>] {\
-    \<code>\
-    return \<value>; \# Optional, if empty or no return, don't define return type\
-}\
+&emsp;\<code>\
+&emsp;return \<value>; \# Optional, if empty or no return, don't define return type\
+}
 
 ## Comments
 \# Comment\
