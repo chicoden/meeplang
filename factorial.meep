@@ -3,7 +3,7 @@ func factorial(i32 n) {
     return n * factorial(n - 1);
 }
 
-for (i32 i = 0; i < 10; i++) {
+for (i32 i = 0; i < 10; i += 1) {
     i32 res = factorial(i);
     print(res);
 }
