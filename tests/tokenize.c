@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
 
                 case Token_STRING:
                     printf("STRING on line %i\n", token.lineno);
-                    printf("%s\n", token.string);
+                    printf("\"%s\"\n", token.string);
                     break;
 
                 case Token_NUMBER:

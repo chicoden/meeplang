@@ -21,7 +21,7 @@ Decimal literal: \<decimal digits>
 \<type> \<name>; \# Undefined value\
 \<type> \<name> = \<value>;\
 \<name> = \<value>; # Variable must be declared first\
-Names must consist of only underscores and alphanumeric ASCII characters.
+Names must consist of only underscores and alphanumeric ASCII characters. The first character may not be a digit however!
 
 ## Arrays
 \<type>[\<length>] myArray;\

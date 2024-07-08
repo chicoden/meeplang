@@ -33,14 +33,33 @@ void storeToken(FILE *stream, long tokenStart, Token *token) {
     token->string[length] = '\0';
 }
 
+int isBinDigit(int ch) {
+    return ch == '0' || ch == '1';
+}
+
+int isOctDigit(int ch) {
+    return ch >= '0' && ch <= '7';
+}
+
+int isDecDigit(int ch) {
+    return ch >= '0' && ch <= '9';
+}
+
+int isHexDigit(int ch) {
+    return (ch >= '0' && ch <= '9') ||
+           (ch >= 'a' && ch <= 'f') ||
+           (ch >= 'A' && ch <= 'F');
+}
+
+// /#.*/
 int scanToken_COMMENT(FILE *stream, Token *token) {
-    long tokenStart = ftell(stream);
     int ch = fgetc(stream);
     if (ch != '#') {
         if (ch != EOF) fseek(stream, -1, SEEK_CUR);
         return 0;
     }
 
+    long tokenStart = ftell(stream);
     while (1) {
         ch = fgetc(stream);
         if (ch == '\n') fseek(stream, -1, SEEK_CUR);
@@ -52,6 +71,7 @@ int scanToken_COMMENT(FILE *stream, Token *token) {
     return 1;
 }
 
+// /\n/
 int scanToken_NEWLINE(FILE *stream, Token *token) {
     long tokenStart = ftell(stream);
     int ch = fgetc(stream);
@@ -65,6 +85,7 @@ int scanToken_NEWLINE(FILE *stream, Token *token) {
     return 1;
 }
 
+// /[ \t]+/
 int scanToken_WHITESPACE(FILE *stream, Token *token) {
     long tokenStart = ftell(stream);
     int ch = fgetc(stream);
@@ -86,16 +107,104 @@ int scanToken_WHITESPACE(FILE *stream, Token *token) {
     return 1;
 }
 
+// /"([\s\S]|[^"])*"/
 int scanToken_STRING(FILE *stream, Token *token) {
-    return 0;
+    int ch = fgetc(stream);
+    if (ch != '"') {
+        if (ch != EOF) fseek(stream, -1, SEEK_CUR);
+        return 0;
+    }
+
+    long tokenStart = ftell(stream);
+    while (1) {
+        ch = fgetc(stream);
+        if (ch == '\\') {
+            ch = fgetc(stream);
+        } else if (ch == '"') {
+            fseek(stream, -1, SEEK_CUR);
+            break;
+        } if (ch == EOF) {
+            fseek(stream, tokenStart - 1, SEEK_SET);
+            return 0;
+        }
+    }
+
+    storeToken(stream, tokenStart, token);
+    token->kind = Token_STRING;
+    fseek(stream, 1, SEEK_CUR);
+    return 1;
 }
 
+// /(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|[0-9]+/
 int scanToken_NUMBER(FILE *stream, Token *token) {
-    return 0;
+    long tokenStart = ftell(stream);
+    int (*isValidDigit)(int) = &isDecDigit;
+    int digitsRead = 1;
+
+    int ch = fgetc(stream);
+    if (!isdigit(ch)) {
+        if (ch != EOF) fseek(stream, -1, SEEK_CUR);
+        return 0;
+    } if (ch == '0') {
+        int format = fgetc(stream);
+        digitsRead = 0;
+        if (format == 'b') {
+            isValidDigit = &isBinDigit;
+        } else if (format == 'o') {
+            isValidDigit = &isOctDigit;
+        } else if (format == 'x') {
+            isValidDigit = &isHexDigit;
+        } else {
+            if (format != EOF) fseek(stream, -2, SEEK_CUR);
+            if (isalnum(format)) return 0;
+        }
+    }
+
+    while (1) {
+        ch = fgetc(stream);
+        if (!isValidDigit(ch)) {
+            if (isalnum(ch)) {
+                fseek(stream, tokenStart, SEEK_SET);
+                return 0;
+            }
+
+            if (ch != EOF) fseek(stream, -1, SEEK_CUR);
+            break;
+        }
+
+        digitsRead++;
+    }
+
+    if (digitsRead == 0) {
+        fseek(stream, tokenStart, SEEK_SET);
+        return 0;
+    }
+
+    storeToken(stream, tokenStart, token);
+    token->kind = Token_NUMBER;
+    return 1;
 }
 
+// /[_a-zA-Z][_a-zA-Z0-9]*/
 int scanToken_ID(FILE *stream, Token *token) {
-    return 0;
+    long tokenStart = ftell(stream);
+    int ch = fgetc(stream);
+    if (ch != '_' && !isalpha(ch)) {
+        if (ch != EOF) fseek(stream, -1, SEEK_CUR);
+        return 0;
+    }
+
+    while (1) {
+        ch = fgetc(stream);
+        if (ch != '_' && !isalnum(ch)) {
+            if (ch != EOF) fseek(stream, -1, SEEK_CUR);
+            break;
+        }
+    }
+
+    storeToken(stream, tokenStart, token);
+    token->kind = Token_ID;
+    return 1;
 }
 
 int scanToken_SYMBOL(FILE *stream, Token *token) {
