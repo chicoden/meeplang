@@ -14,7 +14,7 @@ References: ref \<type>, ref (ref \<type>), etc.\
 ## Integer literals
 Binary literal: 0b\<binary digits>\
 Octal literal: 0o\<octal digits>\
-Hex literal: 0x<hex digits>\
+Hex literal: 0x\<hex digits>\
 Decimal literal: \<decimal digits>
 
 ## Variables
