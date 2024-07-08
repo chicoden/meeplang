@@ -1,0 +1,18 @@
+i32[] seq = [0, ...99];
+for (i32 n = 1; n < seq.length; n += 1) {
+    i32 next = seq[n - 1] - n;
+
+    bool discard = next <= 0;
+    if (!discard) {
+        for (i32 i = 0; i < n; i += 1) {
+            if (seq[i] == next) {
+                discard = true;
+                break;
+            }
+        }
+    }
+
+    if (discard) next = seq[n - 1] + n;
+    seq[n] = next;
+    print(next);
+}

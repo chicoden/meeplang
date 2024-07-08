@@ -1,0 +1,18 @@
+i32 numPrimes = 0;
+i32 n = 2;
+while (numPrimes < 10) {
+    bool isPrime = true;
+    for (i32 i = 2; i < n; i += 1) {
+        if (n % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        print(n);
+        numPrimes += 1;
+    }
+
+    n += 1;
+}

@@ -70,9 +70,6 @@ int main(int argc, char *argv[]) {
                     printf("SYMBOL on line %i\n", token.lineno);
                     printf("%s\n", token.string);
                     break;
-
-                default:
-                    break;
             }
         } else if (code == 0) {
             printf("EOF\n");

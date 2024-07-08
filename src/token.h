@@ -14,7 +14,6 @@ typedef struct {
         Token_STRING,
         Token_NUMBER,
         Token_ID,
-        Token_KEYWORD,
         Token_SYMBOL
     } kind;
 } Token;

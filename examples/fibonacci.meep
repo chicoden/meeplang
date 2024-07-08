@@ -1,0 +1,6 @@
+i32 prev = 1;
+i32 cur = 0;
+for (i32 i = 0; i < 10; i += 1) {
+    print(cur);
+    prev, cur = cur, prev + cur;
+}
