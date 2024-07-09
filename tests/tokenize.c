@@ -28,45 +28,61 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    FILE *outfile = fopen(argv[2], "w");
+    if (outfile == NULL) goto teardown;
+
     while (1) {
         Token token;
         int code = scanToken(&scanner, &token);
         if (code == 1) {
             switch (token.kind) {
                 case Token_COMMENT:
+                    fprintf(outfile, "#%s", token.string);
                     printf("COMMENT on line %i\n", token.lineno);
                     printQuote(token.string);
                     putchar('\n');
                     break;
 
                 case Token_NEWLINE:
+                    fprintf(outfile, "\n");
                     printf("NEWLINE on line %i\n", token.lineno);
                     printQuote(token.string);
                     putchar('\n');
                     break;
 
                 case Token_WHITESPACE:
+                    fprintf(outfile, "%s", token.string);
                     printf("WHITESPACE on line %i\n", token.lineno);
                     printQuote(token.string);
                     putchar('\n');
                     break;
 
                 case Token_STRING:
+                    fprintf(outfile, "\"%s\"", token.string);
                     printf("STRING on line %i\n", token.lineno);
                     printf("\"%s\"\n", token.string);
                     break;
 
-                case Token_NUMBER:
-                    printf("NUMBER on line %i\n", token.lineno);
+                case Token_FLOAT:
+                    fprintf(outfile, "%s", token.string);
+                    printf("FLOAT on line %i\n", token.lineno);
+                    printf("%s\n", token.string);
+                    break;
+
+                case Token_INTEGER:
+                    fprintf(outfile, "%s", token.string);
+                    printf("INTEGER on line %i\n", token.lineno);
                     printf("%s\n", token.string);
                     break;
 
                 case Token_ID:
+                    fprintf(outfile, "%s", token.string);
                     printf("ID on line %i\n", token.lineno);
                     printf("%s\n", token.string);
                     break;
 
                 case Token_SYMBOL:
+                    fprintf(outfile, "%s", token.string);
                     printf("SYMBOL on line %i\n", token.lineno);
                     printf("%s\n", token.string);
                     break;
@@ -80,6 +96,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    deinitTokenScanner(&scanner);
+    fclose(outfile);
+    teardown: deinitTokenScanner(&scanner);
     return 0;
 }

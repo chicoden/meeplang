@@ -1,0 +1,297 @@
+COMMENT on line 1
+" foo eaifii"
+NEWLINE on line 1
+"\n"
+NEWLINE on line 2
+"\n"
+WHITESPACE on line 3
+"    "
+FLOAT on line 3
+.23
+WHITESPACE on line 3
+" "
+FLOAT on line 3
+.0
+WHITESPACE on line 3
+" "
+FLOAT on line 3
+0.
+WHITESPACE on line 3
+" "
+FLOAT on line 3
+134.
+WHITESPACE on line 3
+" "
+FLOAT on line 3
+1.85
+NEWLINE on line 3
+"\n"
+NEWLINE on line 4
+"\n"
+WHITESPACE on line 5
+"  "
+INTEGER on line 5
+0xffAe98
+NEWLINE on line 5
+"\n"
+WHITESPACE on line 6
+"  "
+NEWLINE on line 6
+"\n"
+SYMBOL on line 7
+(
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+)
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+[
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+]
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+{
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+}
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+:
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+;
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+.
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+...
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+,
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+=
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+?
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+$
+WHITESPACE on line 7
+" "
+SYMBOL on line 7
+->
+NEWLINE on line 7
+"\n"
+SYMBOL on line 8
+<
+WHITESPACE on line 8
+" "
+SYMBOL on line 8
+>
+WHITESPACE on line 8
+" "
+SYMBOL on line 8
+<=
+WHITESPACE on line 8
+" "
+SYMBOL on line 8
+>=
+WHITESPACE on line 8
+" "
+SYMBOL on line 8
+==
+WHITESPACE on line 8
+" "
+SYMBOL on line 8
+!=
+NEWLINE on line 8
+"\n"
+SYMBOL on line 9
++
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+-
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+*
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+/
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+%
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
++=
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+-=
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+*=
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+/=
+WHITESPACE on line 9
+" "
+SYMBOL on line 9
+%=
+NEWLINE on line 9
+"\n"
+SYMBOL on line 10
+&&
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+||
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+^^
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+!
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+&&=
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+||=
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+^^=
+NEWLINE on line 10
+"\n"
+SYMBOL on line 11
+&
+WHITESPACE on line 11
+" "
+SYMBOL on line 11
+|
+WHITESPACE on line 11
+" "
+SYMBOL on line 11
+^
+WHITESPACE on line 11
+" "
+SYMBOL on line 11
+~
+WHITESPACE on line 11
+" "
+SYMBOL on line 11
+&=
+WHITESPACE on line 11
+" "
+SYMBOL on line 11
+|=
+WHITESPACE on line 11
+" "
+SYMBOL on line 11
+^=
+NEWLINE on line 11
+"\n"
+NEWLINE on line 12
+"\n"
+INTEGER on line 13
+0o3737
+WHITESPACE on line 13
+" "
+INTEGER on line 13
+0
+WHITESPACE on line 13
+"   "
+ID on line 13
+_foo
+NEWLINE on line 13
+"\n"
+NEWLINE on line 14
+"\n"
+ID on line 15
+adog8allTHeFoo
+WHITESPACE on line 15
+" "
+ID on line 15
+d
+WHITESPACE on line 15
+"  "
+ID on line 15
+aofd
+NEWLINE on line 15
+"\n"
+NEWLINE on line 16
+"\n"
+ID on line 17
+_bar__
+NEWLINE on line 17
+"\n"
+NEWLINE on line 18
+"\n"
+INTEGER on line 19
+0b0011010
+WHITESPACE on line 19
+"    "
+INTEGER on line 19
+8373
+WHITESPACE on line 19
+" "
+INTEGER on line 19
+19
+NEWLINE on line 19
+"\n"
+WHITESPACE on line 20
+" \t"
+STRING on line 20
+"multiline  	string"
+STRING on line 20
+"foof"
+WHITESPACE on line 20
+"\t "
+NEWLINE on line 20
+"\n"
+WHITESPACE on line 21
+"   "
+STRING on line 21
+"foo\n bar\t \\aaf  af\"\"'#foo"
+COMMENT on line 21
+" baz"
+NEWLINE on line 21
+"\n"
+NEWLINE on line 22
+"\n"
+COMMENT on line 23
+"foo"
+NEWLINE on line 23
+"\n"
+NEWLINE on line 24
+"\n"
+FLOAT on line 25
+1.
+EOF

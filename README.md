@@ -41,6 +41,7 @@ myArray[index] = item;
 ## Referencing/dereferencing
 ref \<type> myRef = ?\<variable>;\
 \<type> value = $myRef;
+null: never a valid reference
 
 ## Type casts
 reinterp\<value, type>: reinterprets the bits of \<value> as \<type>\
