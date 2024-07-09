@@ -146,7 +146,7 @@ int scanToken_STRING(FILE *stream, Token *token) {
     return 1;
 }
 
-// /[\+\-]?([0-9]+\.[0-9]*)|([0-9]*\.[0-9]+)/
+// /[\+\-]?(([0-9]+\.[0-9]*)|([0-9]*\.[0-9]+))/
 int scanToken_FLOAT(FILE *stream, Token *token) {
     long tokenStart = ftell(stream);
     int ch = fgetc(stream);
@@ -194,14 +194,18 @@ int scanToken_FLOAT(FILE *stream, Token *token) {
     return 1;
 }
 
-// /(0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|([1-9][0-9]*)/
+// /[\+\-]?((0b[01]+)|(0o[0-7]+)|(0x[0-9a-fA-F]+)|([1-9][0-9]*))/
 int scanToken_INTEGER(FILE *stream, Token *token) {
     long tokenStart = ftell(stream);
     int ch = fgetc(stream);
 
+    // + or - are ok
+    if (ch == '+' || ch == '-') ch = fgetc(stream);
+
     // Check that the first character is a digit
     if (!isDecDigit(ch)) {
-        if (ch != EOF) fseek(stream, -1, SEEK_CUR);
+        // May have consumed additional sign character so seeking back one may not work
+        if (ch != EOF) fseek(stream, tokenStart, SEEK_SET);
         return 0;
     }
 

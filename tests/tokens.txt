@@ -124,174 +124,202 @@ NEWLINE on line 8
 "\n"
 SYMBOL on line 9
 +
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
--
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
-*
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
-/
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
-%
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
-+=
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
--=
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
-*=
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
-/=
-WHITESPACE on line 9
-" "
-SYMBOL on line 9
-%=
 NEWLINE on line 9
 "\n"
 SYMBOL on line 10
-&&
+-
 WHITESPACE on line 10
 " "
 SYMBOL on line 10
-||
+*
 WHITESPACE on line 10
 " "
 SYMBOL on line 10
-^^
+/
 WHITESPACE on line 10
 " "
 SYMBOL on line 10
-!
+%
 WHITESPACE on line 10
 " "
 SYMBOL on line 10
-&&=
++=
 WHITESPACE on line 10
 " "
 SYMBOL on line 10
-||=
+-=
 WHITESPACE on line 10
 " "
 SYMBOL on line 10
-^^=
+*=
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+/=
+WHITESPACE on line 10
+" "
+SYMBOL on line 10
+%=
 NEWLINE on line 10
 "\n"
 SYMBOL on line 11
-&
+&&
 WHITESPACE on line 11
 " "
 SYMBOL on line 11
-|
+||
 WHITESPACE on line 11
 " "
 SYMBOL on line 11
-^
+^^
 WHITESPACE on line 11
 " "
 SYMBOL on line 11
-~
+!
 WHITESPACE on line 11
 " "
 SYMBOL on line 11
-&=
+&&=
 WHITESPACE on line 11
 " "
 SYMBOL on line 11
-|=
+||=
 WHITESPACE on line 11
 " "
 SYMBOL on line 11
-^=
+^^=
 NEWLINE on line 11
 "\n"
+SYMBOL on line 12
+&
+WHITESPACE on line 12
+" "
+SYMBOL on line 12
+|
+WHITESPACE on line 12
+" "
+SYMBOL on line 12
+^
+WHITESPACE on line 12
+" "
+SYMBOL on line 12
+~
+WHITESPACE on line 12
+" "
+SYMBOL on line 12
+&=
+WHITESPACE on line 12
+" "
+SYMBOL on line 12
+|=
+WHITESPACE on line 12
+" "
+SYMBOL on line 12
+^=
 NEWLINE on line 12
 "\n"
-INTEGER on line 13
-0o3737
-WHITESPACE on line 13
-" "
-INTEGER on line 13
-0
-WHITESPACE on line 13
-"   "
-ID on line 13
-_foo
 NEWLINE on line 13
 "\n"
+INTEGER on line 14
+0o3737
+WHITESPACE on line 14
+" "
+INTEGER on line 14
+0
+WHITESPACE on line 14
+"   "
+ID on line 14
+_foo
 NEWLINE on line 14
 "\n"
-ID on line 15
-adog8allTHeFoo
-WHITESPACE on line 15
-" "
-ID on line 15
-d
-WHITESPACE on line 15
-"  "
-ID on line 15
-aofd
 NEWLINE on line 15
 "\n"
+WHITESPACE on line 16
+"   "
+INTEGER on line 16
+-0xff
+WHITESPACE on line 16
+" "
+INTEGER on line 16
+-0
+WHITESPACE on line 16
+"  "
+INTEGER on line 16
+-193
+WHITESPACE on line 16
+" "
+INTEGER on line 16
++3
+WHITESPACE on line 16
+"  "
+FLOAT on line 16
++.2
+WHITESPACE on line 16
+"  "
+FLOAT on line 16
+-1.2
 NEWLINE on line 16
 "\n"
-ID on line 17
-_bar__
 NEWLINE on line 17
 "\n"
+ID on line 18
+adog8allTHeFoo
+WHITESPACE on line 18
+" "
+ID on line 18
+d
+WHITESPACE on line 18
+"  "
+ID on line 18
+aofd
 NEWLINE on line 18
 "\n"
-INTEGER on line 19
-0b0011010
-WHITESPACE on line 19
-"    "
-INTEGER on line 19
-8373
-WHITESPACE on line 19
-" "
-INTEGER on line 19
-19
 NEWLINE on line 19
 "\n"
-WHITESPACE on line 20
-" \t"
-STRING on line 20
-"multiline  	string"
-STRING on line 20
-"foof"
-WHITESPACE on line 20
-"\t "
+ID on line 20
+_bar__
 NEWLINE on line 20
 "\n"
-WHITESPACE on line 21
-"   "
-STRING on line 21
-"foo\n bar\t \\aaf  af\"\"'#foo"
-COMMENT on line 21
-" baz"
 NEWLINE on line 21
 "\n"
+INTEGER on line 22
+0b0011010
+WHITESPACE on line 22
+"    "
+INTEGER on line 22
+8373
+WHITESPACE on line 22
+" "
+INTEGER on line 22
+19
 NEWLINE on line 22
 "\n"
-COMMENT on line 23
-"foo"
+WHITESPACE on line 23
+" \t"
+STRING on line 23
+"multiline  	string"
+STRING on line 23
+"foof"
+WHITESPACE on line 23
+"\t "
 NEWLINE on line 23
 "\n"
+WHITESPACE on line 24
+"   "
+STRING on line 24
+"foo\n bar\t \\aaf  af\"\"'#foo"
+COMMENT on line 24
+" baz"
 NEWLINE on line 24
 "\n"
-FLOAT on line 25
-1.
+NEWLINE on line 25
+"\n"
+COMMENT on line 26
+"foo"
+NEWLINE on line 26
+"\n"
+NEWLINE on line 27
+"\n"
+FLOAT on line 28
++1.
 EOF
